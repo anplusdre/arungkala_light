@@ -30,14 +30,14 @@
     display: flex;
     gap: var(--s16);
 
-    button {
+    a {
         padding: var(--s16) var(--s24);
         font-size: 14px;
+        text-align: center;
         font-weight: 500;
         border-radius: var(--s144);
-    }
-
-    .positiveButton {
+        width: 5vw;
+        justify-content: center;
         background: var(--color-primary);
         color: var(--color-white);
     }
@@ -51,6 +51,46 @@
 .header {
     display: flex;
     padding: var(--s24) 0;
+
+    .headerWrapper {
+        width: 1280px;
+        margin: 0 auto;
+    }
+
+    .headerContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+
+            img {
+                height: var(--s56);
+            }
+        }
+
+        .navigation {
+            display: flex;
+            gap: var(--s48);
+
+            a {
+                font: var(--text-body-medium);
+                line-height: var(--s16);
+                background-color: transparent;
+                transition: background-color .2s linear;
+
+                &:hover {
+                    background: var(--color-gradient-fade);
+                    transition: background-color .2s linear;
+                    // animation: pastel-color-cycle 16s linear infinite;
+                }
+            }
+        }
+    }
+}
+
+.headerMobile {
+    display: none;
 
     .headerWrapper {
         width: 1280px;
@@ -273,15 +313,26 @@
             .positiveButton {
                 display: flex;
                 gap: var(--s12);
-                background: var(--color-white);
-                color: var(--color-dark);
+                background: none;
+                color: var(--color-white);
+                border: 1px solid var(--color-white);
                 font-weight: 500;
                 padding: 20px var(--s24);
+                transition: all .2s ease-in-out;
 
                 .whatsappBtn {
                     width: 16px;
                     height: 16px;
                 }
+
+                &:hover {
+                    background: rgb(255, 255, 255, .32);
+                }
+            }
+
+            .positiveButton.whatsapp {
+                color: var(--color-dark);
+                background: var(--color-white);
             }
         }
     }
@@ -314,6 +365,155 @@
             a {
                 padding: var(--s8) var(--s12);
             }
+        }
+    }
+}
+
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+
+    .header {
+        display: none;
+    }
+
+    .container {
+        width: calc(100% - var(--s32));
+        max-width: calc(100% - var(--s32)) !important;
+    }
+
+    .headerMobile {
+        display: block;
+
+        .container {
+
+            .headerContent {
+                padding: var(--s12) 0;
+
+                .logo {
+                    flex: 1;
+
+                    img {
+                        height: var(--s40);
+                    }
+                }
+
+                .possible {
+                    a {
+                        width: unset;
+                    }
+                }
+
+                .navigation {
+                    .hamburger {
+                        width: 32px;
+                        height: 32px;
+                        margin-right: var(--s24);
+                    }
+
+                    .navItems {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .homeSection {
+        .homeTitle {
+            h1 {
+                font-size: var(--s48);
+                line-height: var(--s56);
+                font-weight: 600;
+                margin: var(--s40) auto var(--s24);
+            }
+
+            h5 {
+                font-size: 18px;
+                line-height: var(--s32);
+            }
+        }
+    }
+
+    .aboutSection {
+        margin-top: 0;
+
+        .aboutContent {
+            flex-direction: column;
+
+            .aboutUs {
+                order: 2;
+                padding: var(--s16);
+
+                .possible {
+
+                    a {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .aboutImages {
+                order: 1;
+
+                img {
+                    width: 100%;
+                }
+
+                .imageTwo {
+                    width: 50vw;
+                }
+
+
+            }
+        }
+
+    }
+
+    .serviceSection {
+        margin: var(--s120) 0;
+
+        .serviceContent {
+            padding: 0 var(--s16);
+
+            .serviceListTitle {
+                font-weight: 400;
+                font-size: var(--s32);
+                line-height: var(--s40);
+            }
+
+            .serviceList {
+                display: flex;
+                flex-direction: column;
+                gap: var(--s40);
+                grid-template-columns: 0;
+                margin-top: var(--s56);
+            }
+        }
+    }
+
+    .ctaSection {
+        padding: var(--s80) 0;
+
+        .possible {
+            width: 100%;
+
+            a {
+                justify-content: center;
+                align-items: center;
+                font-size: var(--s16);
+                width: 100%;
+                padding: 0 var(--s40);
+            }
+
+        }
+    }
+
+    .footer {
+        .index {
+            display: none !important;
         }
     }
 }

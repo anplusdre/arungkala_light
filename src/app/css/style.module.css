@@ -24,13 +24,14 @@
   display: flex;
   gap: var(--s16);
 }
-.possible button {
+.possible a {
   padding: var(--s16) var(--s24);
   font-size: 14px;
+  text-align: center;
   font-weight: 500;
   border-radius: var(--s144);
-}
-.possible .positiveButton {
+  width: 5vw;
+  justify-content: center;
   background: var(--color-primary);
   color: var(--color-white);
 }
@@ -66,6 +67,36 @@
   transition: background-color 0.2s linear;
 }
 .header .headerContent .navigation a:hover {
+  background: var(--color-gradient-fade);
+  transition: background-color 0.2s linear;
+}
+
+.headerMobile {
+  display: none;
+}
+.headerMobile .headerWrapper {
+  width: 1280px;
+  margin: 0 auto;
+}
+.headerMobile .headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerMobile .headerContent .logo img {
+  height: var(--s56);
+}
+.headerMobile .headerContent .navigation {
+  display: flex;
+  gap: var(--s48);
+}
+.headerMobile .headerContent .navigation a {
+  font: var(--text-body-medium);
+  line-height: var(--s16);
+  background-color: transparent;
+  transition: background-color 0.2s linear;
+}
+.headerMobile .headerContent .navigation a:hover {
   background: var(--color-gradient-fade);
   transition: background-color 0.2s linear;
 }
@@ -223,14 +254,23 @@
 .ctaSection .ctaContent .possible .positiveButton {
   display: flex;
   gap: var(--s12);
-  background: var(--color-white);
-  color: var(--color-dark);
+  background: none;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
   font-weight: 500;
   padding: 20px var(--s24);
+  transition: all 0.2s ease-in-out;
 }
 .ctaSection .ctaContent .possible .positiveButton .whatsappBtn {
   width: 16px;
   height: 16px;
+}
+.ctaSection .ctaContent .possible .positiveButton:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+.ctaSection .ctaContent .possible .positiveButton.whatsapp {
+  color: var(--color-dark);
+  background: var(--color-white);
 }
 
 .footer {
@@ -257,4 +297,104 @@
 }
 .footer .footerContent .index a {
   padding: var(--s8) var(--s12);
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .header {
+    display: none;
+  }
+  .container {
+    width: calc(100% - var(--s32));
+    max-width: calc(100% - var(--s32)) !important;
+  }
+  .headerMobile {
+    display: block;
+  }
+  .headerMobile .container .headerContent {
+    padding: var(--s12) 0;
+  }
+  .headerMobile .container .headerContent .logo {
+    flex: 1;
+  }
+  .headerMobile .container .headerContent .logo img {
+    height: var(--s40);
+  }
+  .headerMobile .container .headerContent .possible a {
+    width: unset;
+  }
+  .headerMobile .container .headerContent .navigation .hamburger {
+    width: 32px;
+    height: 32px;
+    margin-right: var(--s24);
+  }
+  .headerMobile .container .headerContent .navigation .navItems {
+    display: none;
+  }
+  .homeSection .homeTitle h1 {
+    font-size: var(--s48);
+    line-height: var(--s56);
+    font-weight: 600;
+    margin: var(--s40) auto var(--s24);
+  }
+  .homeSection .homeTitle h5 {
+    font-size: 18px;
+    line-height: var(--s32);
+  }
+  .aboutSection {
+    margin-top: 0;
+  }
+  .aboutSection .aboutContent {
+    flex-direction: column;
+  }
+  .aboutSection .aboutContent .aboutUs {
+    order: 2;
+    padding: var(--s16);
+  }
+  .aboutSection .aboutContent .aboutUs .possible a {
+    width: 100%;
+    text-align: center;
+  }
+  .aboutSection .aboutContent .aboutImages {
+    order: 1;
+  }
+  .aboutSection .aboutContent .aboutImages img {
+    width: 100%;
+  }
+  .aboutSection .aboutContent .aboutImages .imageTwo {
+    width: 50vw;
+  }
+  .serviceSection {
+    margin: var(--s120) 0;
+  }
+  .serviceSection .serviceContent {
+    padding: 0 var(--s16);
+  }
+  .serviceSection .serviceContent .serviceListTitle {
+    font-weight: 400;
+    font-size: var(--s32);
+    line-height: var(--s40);
+  }
+  .serviceSection .serviceContent .serviceList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s40);
+    grid-template-columns: 0;
+    margin-top: var(--s56);
+  }
+  .ctaSection {
+    padding: var(--s80) 0;
+  }
+  .ctaSection .possible {
+    width: 100%;
+  }
+  .ctaSection .possible a {
+    justify-content: center;
+    align-items: center;
+    font-size: var(--s16);
+    width: 100%;
+    padding: 0 var(--s40);
+  }
+  .footer .index {
+    display: none !important;
+  }
 }/*# sourceMappingURL=style.module.css.map */
