@@ -1,0 +1,130 @@
+@import './reset.css';
+
+@font-face {
+    font-family: "Mona Sans";
+    src: url("./fonts/MonaSans.ttf") format("truetype-variations");
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+}
+
+@font-face {
+    font-family: "Source Serif";
+    src: url("./fonts/SourceSerif.ttf") format("truetype-variations");
+    font-weight: 200 900;
+}
+
+
+:root {
+    --color-primary: rgb(7, 125, 221);
+    --color-secondary: rgb(7, 207, 221);
+    --color-primary-rgb: 7, 207, 221, 1;
+    --color-secondary-rgb: 7, 125, 221, 1;
+    --color-white: rgb(255 255 255 / 1);
+    --color-grey: #87898f;
+    --color-fade: #F5F5F6;
+    --color-light-grey: #A2A5Af;
+    --color-dark: #0B0E0E;
+    --color-black: #484848;
+    --color-void: #151515;
+    --color-void-rgb: 21, 21, 21;
+    --color-border: #222226;
+    --color-border-light: #38383E;
+    --color-gradient: linear-gradient(145deg, rgba(7, 207, 221, 1) 0%, rgba(7, 125, 221, 1) 100%);
+    --color-gradient-fade: linear-gradient(145deg, rgba(7, 207, 221, .56) 0%, rgba(7, 125, 221, .56) 100%);
+    --typeface: "Mona Sans";
+    --typeface-display: "Source Serif";
+    --text-body-normal: normal normal 400 14px var(--typeface);
+    --text-body-medium: normal normal 500 14px var(--typeface);
+    --text-body-bold: normal normal 600 14px var(--typeface);
+    --letter-24: 0.24px;
+    --letter-32: 0.32px;
+    --letter-40: 0.4px;
+    --letter-48: 0.48px;
+    --letter-56: 0.56px;
+    --letter-64: 0.64px;
+    --letter-72: 0.72px;
+    --letter-80: 0.8px;
+    --letter-96: 0.96px;
+    --s4: 4px;
+    --s8: 8px;
+    --s12: 12px;
+    --s16: 16px;
+    --s24: 24px;
+    --s32: 32px;
+    --s40: 40px;
+    --s48: 48px;
+    --s56: 56px;
+    --s64: 64px;
+    --s72: 72px;
+    --s80: 80px;
+    --s96: 96px;
+    --s112: 112px;
+    --s120: 120px;
+    --s128: 128px;
+    --s136: 136px;
+    --s144: 144px;
+    --s152: 152px;
+    --s160: 160px;
+    --s168: 168px;
+    --s176: 176px;
+    --s180: 184px;
+    --s192: 192px;
+    --s200: 200px;
+    --s208: 208px;
+    --s216: 216px;
+    --s224: 224px;
+    --s232: 232px;
+    --s240: 240px;
+    --gap-s: 4px 8px;
+    --gap-m: 12px 16px;
+    --gap-l: 16px 24px;
+    --delay: 0.2s;
+}
+
+body {
+    font-family: var(--typeface);
+    color: var(--color-dark);
+    font-feature-settings: 'ss01';
+    background: #F8F7F4;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    max-width: 1600px;
+    width: 1600px;
+    margin: 0 auto;
+}
+
+header {
+    position: relative;
+}
+
+/*# sourceMappingURL=global.css.map */
+canvas {
+    display: block;
+    position: relative;
+    margin: auto;
+}
+
+.smoke {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+}
+
+a {
+    color: var(--color-dark);
+}
+
+button {
+    outline: 0;
+    border: 0;
+    background: none;
+}

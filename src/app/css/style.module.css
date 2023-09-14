@@ -1,0 +1,260 @@
+@keyframes pastel-color-cycle {
+  0% {
+    background: #E6FBFE;
+  }
+  25% {
+    background: #FFE7EE;
+  }
+  50% {
+    background: #FFEAD2;
+  }
+  75% {
+    background: #F2EBFF;
+  }
+  100% {
+    background: #DDE7FF;
+  }
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.possible {
+  display: flex;
+  gap: var(--s16);
+}
+.possible button {
+  padding: var(--s16) var(--s24);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--s144);
+}
+.possible .positiveButton {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.possible .ghostButton {
+  background: var(--color-white);
+  color: var(--color-dark);
+}
+
+.header {
+  display: flex;
+  padding: var(--s24) 0;
+}
+.header .headerWrapper {
+  width: 1280px;
+  margin: 0 auto;
+}
+.header .headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .headerContent .logo img {
+  height: var(--s56);
+}
+.header .headerContent .navigation {
+  display: flex;
+  gap: var(--s48);
+}
+.header .headerContent .navigation a {
+  font: var(--text-body-medium);
+  line-height: var(--s16);
+  background-color: transparent;
+  transition: background-color 0.2s linear;
+}
+.header .headerContent .navigation a:hover {
+  background: var(--color-gradient-fade);
+  transition: background-color 0.2s linear;
+}
+
+.homeSection {
+  padding: var(--s80) 0 var(--s120) 0;
+}
+.homeSection .container {
+  max-width: 892px;
+  margin: 0 auto;
+  text-align: center;
+}
+.homeSection .homeFloater {
+  display: inline-flex;
+  gap: var(--s16);
+  justify-content: center;
+  align-items: center;
+  font-family: var(--typeface-display);
+  font-weight: 500;
+  padding: var(--s12) var(--s16);
+  border-radius: 100vw;
+  border: 1px solid transparent;
+  animation: pastel-color-cycle 32s linear infinite;
+  transition: all 0.2s ease-in-out;
+}
+.homeSection .homeFloater:hover {
+  animation: none;
+  background: transparent;
+  border: 1px solid var(--color-dark);
+}
+.homeSection .homeFloater .indonesian {
+  width: 24px;
+  height: 24px;
+  background: url("../assets/writer.svg");
+  background-size: 24px 24px;
+}
+.homeSection .homeTitle h1 {
+  margin-top: var(--s80);
+  font-family: var(--typeface-display);
+  font-size: var(--s64);
+  line-height: var(--s80);
+  font-weight: 700;
+}
+.homeSection .homeTitle h1 span {
+  color: var(--color-primary);
+}
+.homeSection .homeTitle h5 {
+  margin-top: var(--s32);
+  font-size: 20px;
+}
+
+.aboutSection {
+  margin-top: var(--s80);
+}
+.aboutSection .aboutContent {
+  display: flex;
+  gap: var(--s80);
+  justify-content: space-between;
+}
+.aboutSection .aboutContent .aboutUs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.aboutSection .aboutContent .aboutUs .obvious {
+  font-size: var(--s48);
+  font-weight: 500;
+  line-height: var(--s64);
+}
+.aboutSection .aboutContent .aboutUs .easy {
+  font-size: var(--s16);
+  line-height: 28px;
+  margin: var(--s24) 0;
+}
+.aboutSection .aboutContent .aboutImages {
+  position: relative;
+}
+.aboutSection .aboutContent .aboutImages .imageTwo {
+  position: absolute;
+  bottom: -80px;
+  right: 0;
+}
+
+.serviceSection {
+  margin: var(--s160) 0;
+}
+.serviceSection .serviceContent .serviceListTitle {
+  font-size: var(--s48);
+  font-weight: 500;
+}
+.serviceSection .serviceContent .serviceList {
+  margin-top: var(--s80);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s40);
+}
+.serviceSection .serviceContent .serviceList .List {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s16);
+}
+.serviceSection .serviceContent .serviceList .List .listName {
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  gap: var(--s12);
+  align-items: center;
+}
+.serviceSection .serviceContent .serviceList .List .listName .serviceIcon {
+  width: 24px;
+}
+.serviceSection .serviceContent .serviceList .List .listName .serviceName {
+  font-size: 20px;
+  font-weight: 600;
+}
+.serviceSection .serviceContent .serviceList .List .serviceDescription {
+  line-height: 28px;
+}
+.serviceSection .serviceContent .serviceList .List .serviceDescription a {
+  color: rgb(65, 100, 255);
+  font-weight: 500;
+}
+
+.ctaSection {
+  padding: var(--s120) 0;
+  background: var(--color-gradient);
+}
+.ctaSection .ctaContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s24);
+  color: var(--color-white);
+  text-align: center;
+  justify-content: center;
+}
+.ctaSection .ctaContent .ctaTitle {
+  font-size: var(--s64);
+  font-family: var(--typeface-display);
+  font-weight: 500;
+}
+.ctaSection .ctaContent .ctaDescription {
+  margin: var(--s24) 0;
+}
+.ctaSection .ctaContent .possible {
+  display: flex;
+  justify-content: center;
+}
+.ctaSection .ctaContent .possible a {
+  padding: var(--s16) var(--s24);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--s144);
+}
+.ctaSection .ctaContent .possible .positiveButton {
+  display: flex;
+  gap: var(--s12);
+  background: var(--color-white);
+  color: var(--color-dark);
+  font-weight: 500;
+  padding: 20px var(--s24);
+}
+.ctaSection .ctaContent .possible .positiveButton .whatsappBtn {
+  width: 16px;
+  height: 16px;
+}
+
+.footer {
+  padding: var(--s12);
+}
+.footer .footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+.footer .footerContent .logo {
+  display: flex;
+  flex-direction: row;
+  gap: var(--s24);
+  align-items: center;
+}
+.footer .footerContent .logo img {
+  height: var(--s24);
+}
+.footer .footerContent .index {
+  display: flex;
+  gap: var(--s16);
+}
+.footer .footerContent .index a {
+  padding: var(--s8) var(--s12);
+}/*# sourceMappingURL=style.module.css.map */
