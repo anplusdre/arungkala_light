@@ -10,8 +10,14 @@ import styles from '../css/style.module.css'
 import Hamburger from '../assets/hamburger.svg'
 
 export default function MainComponent() {
+
+  const [isNavOpen, setIsNavOpen] = useState(false);
     const [activeSection, setActiveSection] = useState(null);
     const headerRef = useRef(null);
+
+    const toggleNav = () => {
+      setIsNavOpen(!isNavOpen);
+    };
   
     useEffect(() => {
       // Function to handle smooth scrolling
@@ -88,9 +94,10 @@ export default function MainComponent() {
         <div className={styles.headerMobile} ref={headerRef}>
             <div className={styles.container}>
                 <div className={styles.headerContent}>
-                    <div className={styles.navigation}>
+                    {/* <div className={styles.navigation} onClick={toggleNav}>
                         <Image src={Hamburger} alt='Hamburger Icon' width={32} height={32} className={styles.hamburger}/>
-                        <div className={styles.navItems}>
+                        <div className={`${styles.navItems} ${isNavOpen ? styles.visible : ''}`}>
+                            <div className={styles.navItem}>
                             <a href="#about" className={activeSection === 'about' ? 'active scroll-link' : 'scroll-link'}>
                                 Tentang
                             </a>
@@ -100,8 +107,10 @@ export default function MainComponent() {
                             <a href="#contact" className={activeSection === 'contact' ? 'active scroll-link' : 'scroll-link'}>
                                 Kontak
                             </a>
+
+                            </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className={styles.logo}>
                         <img src="./arungkala.svg" alt="Logo" />
                     </div>

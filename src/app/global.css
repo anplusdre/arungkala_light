@@ -89,7 +89,8 @@ body {
     font-family: var(--typeface);
     color: var(--color-dark);
     font-feature-settings: 'ss01';
-    background: #F8F7F4;
+    background: rgb(248, 247, 244);
+    background: linear-gradient(145deg, rgba(248, 247, 244, 1) 0%, rgba(255, 255, 255, 1) 8%);
 }
 
 section {
