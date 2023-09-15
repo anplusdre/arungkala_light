@@ -81,6 +81,10 @@
     --delay: 0.2s;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--typeface);
     color: var(--color-dark);

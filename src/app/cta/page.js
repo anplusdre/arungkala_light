@@ -11,14 +11,14 @@ export default function CallToAction() {
 
             <div className={styles.ctaContent}>
                 <div className={styles.ctaTitle}>
-                    Mari kenalan lebih lanjut
+                    Mari diskusi dengan kami
                 </div>
                 <div className={styles.ctaDescription}>
-                    Hubungi kami perihal kebutuhan anda
+                    Hubungi kami perihal kebutuhan anda ke <a href='mailto:kontak@arungkala.com'>kontak@arungkala.com</a>
                 </div>
                 <div className={styles.possible}>
-                    <Link href="https://wa.me/628111967676?text=I'm%20interested%20in%20your%20service" className={`${styles.positiveButton} ${styles.whatsapp}`}><Image src={Whatsapp} className={styles.whatsappBtn} alt='Whatsapp Icon' width={16} height={16} />Whatsapp</Link>
-                    <Link href={"#"} className={styles.positiveButton}><Image src={Email} className={styles.whatsappBtn} alt='Whatsapp Icon' width={16} height={16} />Email</Link>
+                    <Link href="https://wa.me/628111967676?text=Hi,%20saya%20ingin%20berdiskusi" className={`${styles.positiveButton} ${styles.whatsapp}`}><Image src={Whatsapp} className={styles.whatsappBtn} alt='Whatsapp Icon' width={16} height={16} />Whatsapp</Link>
+                    <Link href={"mailto:kontak@arungkala.com"} className={styles.positiveButton}><Image src={Email} className={styles.whatsappBtn} alt='Whatsapp Icon' width={16} height={16} />Email</Link>
                 </div>
             </div>
 

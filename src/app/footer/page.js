@@ -15,7 +15,7 @@ export default function FooterComponent() {
               <div className={styles.index}>
                 <a href='#about'>Tentang</a>
                 <a href='#service'>Layanan</a>
-                <a href='#contact'>Kontak</a>
+                <a href="https://wa.me/628111967676?text=Hi,%20saya%20ingin%20berdiskusi">Kontak</a>
               </div>
             </div>
 
