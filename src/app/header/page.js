@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState, useRef } from 'react';
-import { useTheme } from '../theme/themeProvisder';
+import { useTheme } from '../theme/themeProvider';
 import Image from 'next/image'
 import HomeComponent from '../home/page'
 import AboutComponent from '../about/page'
@@ -12,7 +12,7 @@ import dark from '../assets/dark_icon.svg'
 import light from '../assets/light_icon.svg'
 
 export default function MainComponent() {
-  const { isDarkMode, toggleDarkMode } = useTheme();
+    const { isDarkMode, toggleDarkMode } = useTheme();
 
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [activeSection, setActiveSection] = useState(null);

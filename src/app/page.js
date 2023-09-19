@@ -1,5 +1,5 @@
 import MainComponent from './header/page'
-import ThemeProvider from './theme/themeProvisder';
+import ThemeProvider from './theme/themeProvider';
 
 export default function Home() {
   return (
