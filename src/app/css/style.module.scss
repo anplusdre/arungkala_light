@@ -469,6 +469,7 @@ $animated-color-gradient: gradient-cycle 16s linear infinite;
         color: var(--color-white);
         text-align: center;
         justify-content: center;
+        position: relative;
         z-index: 2;
 
         .ctaTitle {
