@@ -1,4 +1,5 @@
 import styles from '../css/style.module.css'
+import Image from 'next/image'
 
 export default function FooterComponent() {
   return (
@@ -8,7 +9,7 @@ export default function FooterComponent() {
             <div className={styles.footerContent}>
 
               <div className={styles.logo}>
-                <img src='./arungkala.svg'></img>
+                <Image src='./arungkala.svg' alt='Logo'></Image>
                 <p>© 2023 Arungkala, copyrights protected</p>
               </div>
 

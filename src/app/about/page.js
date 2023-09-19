@@ -1,4 +1,5 @@
-import styles from '../css/style.module.css'
+import styles from '../css/style.module.css';
+import Image from 'next/image';
 
 export default function AboutComponent() {
   return (
@@ -15,8 +16,8 @@ export default function AboutComponent() {
                     </div>
                 </div>
                 <div className={styles.aboutImages}>
-                    <img src='./papers.png' className={styles.imageOne}></img>
-                    <img src='./typewriter.png' className={styles.imageTwo}></img>
+                    <Image src='./papers.png' className={styles.imageOne} alt='Papers'></Image>
+                    <Image src='./typewriter.png' className={styles.imageTwo} alt='Typewriter'></Image>
                 </div>
             </div>
 

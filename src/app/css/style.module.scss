@@ -229,7 +229,7 @@ $animated-color-gradient: gradient-cycle 16s linear infinite;
         }
 
         .ctaSection {
-            background: #151818;
+            background: transparent;
 
             .ctaDescription {
 
@@ -428,7 +428,7 @@ $animated-color-gradient: gradient-cycle 16s linear infinite;
         }
 
         .parallax>use {
-            animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+            animation: move-forever 100s cubic-bezier(.55, .5, .45, .5) infinite;
         }
 
         .parallax>use:nth-child(1) {

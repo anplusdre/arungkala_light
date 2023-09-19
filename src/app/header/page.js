@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState, useRef } from 'react';
-import { useTheme } from '../theme/themeProvider';
 import Image from 'next/image'
 import HomeComponent from '../home/page'
 import AboutComponent from '../about/page'
@@ -12,14 +11,12 @@ import dark from '../assets/dark_icon.svg'
 import light from '../assets/light_icon.svg'
 
 export default function MainComponent() {
-    const { isDarkMode, toggleDarkMode } = useTheme();
-
-    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false);
     const [activeSection, setActiveSection] = useState(null);
     const headerRef = useRef(null);
 
-    const toggleNav = () => {
-      setIsNavOpen(!isNavOpen);
+    const toggleDarkMode = () => {
+      setIsDarkMode(!isDarkMode);
     };
   
     useEffect(() => {
@@ -33,7 +30,7 @@ export default function MainComponent() {
           });
         }
       };
-  
+
       // Attach event listeners to each navigation link
       const navigationLinks = document.querySelectorAll('.scroll-link');
       navigationLinks.forEach((link) => {
@@ -43,12 +40,12 @@ export default function MainComponent() {
           handleScrollToSection(sectionId);
         });
       });
-  
+
       // Detect the active section during scrolling
       const handleScroll = () => {
         const scrollPosition = window.scrollY;
         const sections = ['about', 'service'];
-  
+
         for (const sectionId of sections) {
           const section = document.querySelector(`#${sectionId}`);
           if (
@@ -60,16 +57,27 @@ export default function MainComponent() {
           }
         }
       };
-  
+
       // Attach the scroll event listener
       window.addEventListener('scroll', handleScroll);
-  
+
       // Clean up event listeners on unmount
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
 
+    // Add or remove 'dark-mode' class on the body element when isDarkMode changes
+    useEffect(() => {
+      if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
+
+      // You can also save the dark mode preference in localStorage
+      localStorage.setItem('darkMode', isDarkMode.toString());
+    }, [isDarkMode]);
     
   return (
     <div className={isDarkMode ? `${styles.main} ${styles.darkMode}` : styles.main}>
@@ -77,7 +85,7 @@ export default function MainComponent() {
             <div className={styles.headerWrapper}>
                 <div className={styles.headerContent}>
                     <div className={styles.logo}>
-                    <img src="./logo.png" alt="Logo" />
+                    <Image src="./logo.png" alt="Logo" />
                     </div>
                     <div className={styles.navigation}>
                     <a href="#about" className={activeSection === 'about' ? 'active scroll-link' : 'scroll-link'}>
@@ -91,9 +99,9 @@ export default function MainComponent() {
                     </a>
                     <a className={styles.themeToggler} onClick={toggleDarkMode}>
                       {isDarkMode ? (
-                        <Image src={light} alt="light mode icon" width={16} height={16} />
+                        <Image src={light} alt="light mode icon" width={20} height={20} />
                       ) : (
-                        <Image src={dark} alt="light mode icon" width={16} height={16} />
+                        <Image src={dark} alt="light mode icon" width={20} height={20} />
                       )}
                     </a>
                     </div>
@@ -105,7 +113,7 @@ export default function MainComponent() {
             <div className={styles.container}>
                 <div className={styles.headerContent}>
                     <div className={styles.logo}>
-                        <img src="./arungkala.svg" alt="Logo" />
+                        <Image src="./arungkala.svg" alt="Logo" />
                     </div>
                     <div className={styles.possible}>
                         <a href="#contact">Kontak</a>

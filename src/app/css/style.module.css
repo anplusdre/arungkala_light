@@ -167,7 +167,7 @@
   color: var(--color-dark);
 }
 .main.darkMode .ctaSection {
-  background: #151818;
+  background: transparent;
 }
 .main.darkMode .ctaSection .ctaDescription a {
   padding: 0;
@@ -321,7 +321,7 @@
   max-height: 150px;
 }
 .ctaSection .ctaWave .parallax > use {
-  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+  animation: move-forever 100s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
 .ctaSection .ctaWave .parallax > use:nth-child(1) {
   animation-delay: -2s;
