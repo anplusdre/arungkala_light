@@ -406,9 +406,9 @@ $animated-color-gradient: gradient-cycle 16s linear infinite;
 }
 
 .ctaSection {
-    padding: var(--s120) 0;
+    padding: var(--s160) 0;
     position: relative;
-    background: var(--color-gradient);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(7, 207, 221, 1) 24%, rgba(7, 125, 221, 1) 100%);
 
     .ctaWave {
         position: absolute;
