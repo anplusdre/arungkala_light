@@ -15,6 +15,20 @@
     background: #DDE7FF;
   }
 }
+@keyframes gradient-cycle {
+  0% {
+    color: var(--color-primary);
+  }
+  25% {
+    color: var(--color-secondary);
+  }
+  50% {
+    color: var(--color-primary);
+  }
+  100% {
+    color: var(--color-secondary);
+  }
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -30,10 +44,15 @@
   text-align: center;
   font-weight: 500;
   border-radius: var(--s144);
+  border: 1px solid transparent;
   width: 6vw;
   justify-content: center;
-  background: var(--color-primary);
+  background: var(--color-gradient);
   color: var(--color-white);
+  transition: all 0.2s ease-in-out;
+}
+.possible a:hover {
+  opacity: 0.8;
 }
 .possible .ghostButton {
   background: rgb(248, 247, 244);
@@ -61,14 +80,29 @@
   gap: var(--s48);
 }
 .header .headerContent .navigation a {
+  position: relative;
   font: var(--text-body-medium);
   line-height: var(--s16);
   background-color: transparent;
   transition: background-color 0.2s linear;
+  overflow: hidden;
 }
-.header .headerContent .navigation a:hover {
-  background: var(--color-gradient-fade);
-  transition: background-color 0.2s linear;
+.header .headerContent .navigation a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--color-gradient);
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.2s linear;
+}
+.header .headerContent .navigation a:hover::after {
+  transform: translateX(0);
+}
+.header .headerContent .navigation a:nth-child(4)::after {
+  background: none;
 }
 
 .headerMobile {
@@ -99,6 +133,50 @@
 .headerMobile .headerContent .navigation a:hover {
   background: var(--color-gradient-fade);
   transition: background-color 0.2s linear;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+.main.darkMode {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+.main.darkMode .header a {
+  color: var(--color-white);
+}
+.main.darkMode .homeFloater p {
+  color: var(--color-dark);
+}
+.main.darkMode .homeFloater:hover {
+  animation: pastel-color-cycle 32s linear infinite;
+  background: unset;
+  border: 1px solid transparent;
+}
+.main.darkMode .possible .positiveButton {
+  background: var(--color-white);
+  color: var(--color-dark);
+}
+.main.darkMode .possible .ghostButton {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+}
+.main.darkMode .serviceSection .List .serviceName {
+  color: var(--color-dark);
+}
+.main.darkMode .ctaSection {
+  background: #151818;
+}
+.main.darkMode .ctaSection .ctaDescription a {
+  padding: 0;
+  color: var(--color-white);
+  background: none;
+  margin-left: 0;
+}
+.main.darkMode .footer .index a {
+  color: var(--color-white);
 }
 
 .homeSection {
@@ -134,14 +212,14 @@
   background-size: 24px 24px;
 }
 .homeSection .homeTitle h1 {
-  margin-top: var(--s80);
+  margin-top: var(--s40);
   font-family: var(--typeface-display);
   font-size: var(--s64);
   line-height: var(--s80);
   font-weight: 700;
 }
 .homeSection .homeTitle h1 span {
-  color: var(--color-primary);
+  animation: gradient-cycle 16s linear infinite;
 }
 .homeSection .homeTitle h5 {
   margin-top: var(--s32);
@@ -223,7 +301,51 @@
 
 .ctaSection {
   padding: var(--s120) 0;
+  position: relative;
   background: var(--color-gradient);
+}
+.ctaSection .ctaWave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.ctaSection .ctaWave .waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+.ctaSection .ctaWave .parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.ctaSection .ctaWave .parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.ctaSection .ctaWave .parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.ctaSection .ctaWave .parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.ctaSection .ctaWave .parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
 }
 .ctaSection .ctaContent {
   display: flex;
@@ -232,6 +354,7 @@
   color: var(--color-white);
   text-align: center;
   justify-content: center;
+  z-index: 2;
 }
 .ctaSection .ctaContent .ctaTitle {
   font-size: var(--s64);
@@ -478,21 +601,31 @@
     width: 160px;
   }
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1190px) {
   .container {
-    width: 880px;
-    max-width: 880px;
+    width: calc(100% - var(--s120));
+    max-width: calc(100% - var(--s120));
   }
   .headerWrapper {
-    width: 880px !important;
+    width: calc(100% - var(--s120)) !important;
   }
   .serviceList {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-  .aboutImages img {
-    width: 400px;
+  .aboutSection .container .aboutContent {
+    flex-direction: column;
   }
-  .aboutImages .imageTwo {
+  .aboutSection .container .aboutContent .aboutUs {
+    order: 2;
+  }
+  .aboutSection .container .aboutContent .aboutImages {
+    order: 1;
+    text-align: center;
+  }
+  .aboutSection .container .aboutContent .aboutImages img {
+    width: calc(100% - var(--s80));
+  }
+  .aboutSection .container .aboutContent .aboutImages .imageTwo {
     width: 160px;
     bottom: -16px !important;
   }
